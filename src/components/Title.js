@@ -1,12 +1,8 @@
 import React from 'react';
 
-const Title = props => 
+const Title = () => 
     <div className="title">
-        <h1>Webpack config 2</h1>
-        <ol>
-            {props.data.map(result => <li key={result.id}>{result.text}</li>)} 
-        </ol>
+        <h1>React ToDo App</h1>        
     </div>
-
 
 export default Title;
