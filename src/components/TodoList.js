@@ -4,10 +4,14 @@ import style from './TodoList.css'
 
 const TodoList = props => (
         <ol className={style.TodoList}>
-            <h3>Items: {props.data.length}</h3>
-            {props.data.map((item) =>
-                <Todo key={item.id} id={item.id} removeTodo={props.remove} text={item.text}/>
-            )}
+
+            {props.data.map((item) => {
+                if (item.text.toLowerCase().indexOf(props.filter.toLowerCase()) > -1) {
+                    return (
+                        <Todo key={item.id} id={item.id} removeTodo={props.remove} text={item.text}/>
+                    );
+                }
+            })}
         </ol> 
 );   
 
