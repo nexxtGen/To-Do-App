@@ -14,7 +14,7 @@ class App extends React.Component {
         this.state = {
             data: [{
                     id: 1,
-                    text: 'clean room'                    
+                    text: 'clean room'
                 }, {
                     id: 2,
                     text: 'wash the dishes'
@@ -33,8 +33,9 @@ class App extends React.Component {
                     text: 'feed yourself 2'
                 }
                 
-            ],            
-            filter: '',                     
+            ],
+            filter: '',
+            dateToFormat: '1976-04-19T12:59-0500'            
             //formValue: '' //Jest potrzebne w przypadku uzycia komponentu funkcyjnego TodoForm
         }; // #średniklivesmatter        
     }
@@ -64,15 +65,15 @@ class App extends React.Component {
 
     // Filtrowanie listy
     onFilterChange(event) {
-        const value = event.currentTarget.value;  
-        this.setState({ filter: value });        
+        const value = event.currentTarget.value;
+
+        this.setState({ filter: value });
     }    
-    
+    /*
     filterData(val) {
-        const filter = this.state.filter;
-        return val.indexOf(filter) > -1;
+        return val.indexOf(this.state.filter) > -1;
     }
-    
+    */
     render() {
         return (          
             
@@ -80,9 +81,7 @@ class App extends React.Component {
                 <Title data={this.state.data}/>                
                 <TodoForm addItemFunc={this.addTodo.bind(this)}/> 
                 <TodoFilter filter={this.state.filter} onFilterChange={this.onFilterChange.bind(this)}/>
-                <TodoList data={this.state.data.filter(item  => {
-                        return item.text.indexOf(this.state.filter) > -1;
-                    })} remove={this.removeTodo.bind(this)}/>
+                <TodoList data={this.state.data} remove={this.removeTodo.bind(this)} filter={this.state.filter}/>
             </div>
         )
     }
