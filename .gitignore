@@ -33,7 +33,7 @@ bower_components
 build/Release
 
 # Dependency directories
-build/app.bundle.js
+app.bundle.js
 node_modules/
 jspm_packages/
 
