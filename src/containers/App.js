@@ -7,6 +7,7 @@ import TodoFilter from '../components/TodoFilter';
 import TodoForm from '../components/TodoForm';
 import { hot } from 'react-hot-loader';
 
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -20,10 +21,21 @@ class App extends React.Component {
                 }, {
                     id: 3,
                     text: 'feed yourself'
+                },
+                {
+                    id: 4,
+                    text: 'clean room 2'
+                }, {
+                    id: 5,
+                    text: 'wash car'
+                }, {
+                    id: 6,
+                    text: 'feed yourself 2'
                 }
                 
             ],
             filter: '',
+            dateToFormat: '1976-04-19T12:59-0500'            
             //formValue: '' //Jest potrzebne w przypadku uzycia komponentu funkcyjnego TodoForm
         }; // #średniklivesmatter        
     }
@@ -56,15 +68,14 @@ class App extends React.Component {
         const value = event.currentTarget.value;
 
         this.setState({ filter: value });
-    }
+    }    
 
     render() {
-        return (
-            <div className={style.TodoApp}>
-                <Title data={this.state.data}/>
-                <TodoForm addItemFunc={this.addTodo.bind(this)}/>
-                
-
+        return (          
+            
+            <div className={style.TodoApp}> 
+                <Title data={this.state.data}/>                
+                <TodoForm addItemFunc={this.addTodo.bind(this)}/> 
                 <TodoFilter filter={this.state.filter} onFilterChange={this.onFilterChange.bind(this)}/>
                 <TodoList data={this.state.data} remove={this.removeTodo.bind(this)} filter={this.state.filter}/>
             </div>
