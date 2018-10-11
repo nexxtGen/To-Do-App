@@ -1,5 +1,8 @@
 .TodoList {
+    box-sizing: border-box;
     color: blueviolet;
+    width: 70%;
+    margin: 15px auto;    
 }
 
 h3 {

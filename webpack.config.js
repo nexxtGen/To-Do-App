@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeJsPlugin = require('optimize-js-plugin');
 
+
 //webpack.config.js
 const plugins = [new HtmlWebpackPlugin({
     template: 'src/index.html',
@@ -29,7 +30,10 @@ module.exports = (env) => {
             rules: [
                 {
                     test: /\.js$/,
-                    loader: "babel-loader"
+                    loader: "babel-loader",
+                    options: {
+                        plugins: env !== 'production' ? ["react-hot-loader/babel"] : []
+                    }
                 },
                 {
                     test: /\.css$/,
