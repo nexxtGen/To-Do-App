@@ -14,27 +14,33 @@ class App extends React.Component {
         this.state = {
             data: [{
                     id: 1,
-                    text: 'clean room'                    
+                    text: 'clean room',   
+                    active: false                  
                 }, {
                     id: 2,
-                    text: 'wash the dishes'
+                    text: 'wash the dishes',
                 }, {
                     id: 3,
-                    text: 'feed yourself'
+                    text: 'feed yourself',
+                    active: false  
                 },
                 {
                     id: 4,
-                    text: 'clean room 2'
+                    text: 'clean room 2',
+                    active: false  
                 }, {
                     id: 5,
-                    text: 'wash car'
+                    text: 'wash car',
+                    active: false  
                 }, {
                     id: 6,
-                    text: 'feed yourself 2'
+                    text: 'feed yourself 2',
+                    active: false  
                 }
                 
             ],            
-            filter: '',                     
+            filter: '',
+            active: false                     
             //formValue: '' //Jest potrzebne w przypadku uzycia komponentu funkcyjnego TodoForm
         }; // #średniklivesmatter        
     }
@@ -61,6 +67,12 @@ class App extends React.Component {
 
         this.setState({data: remainder});
     }
+    //Przekreslenie po nacisnieciu na task
+    toggleClass() {
+        const currentState = this.state.active;
+        this.setState({ active: !currentState});
+        
+    };
 
     // Filtrowanie listy
     onFilterChange(event) {
@@ -82,7 +94,7 @@ class App extends React.Component {
                 <TodoFilter filter={this.state.filter} onFilterChange={this.onFilterChange.bind(this)}/>
                 <TodoList data={this.state.data.filter(item  => {
                         return item.text.indexOf(this.state.filter) > -1;
-                    })} remove={this.removeTodo.bind(this)}/>
+                    })} remove={this.removeTodo.bind(this)} toggleClass={this.toggleClass.bind(this)} active={this.state.active} />
             </div>
         )
     }

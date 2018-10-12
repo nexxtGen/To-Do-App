@@ -13,7 +13,9 @@ const TodoList = props => {
         <ol className={style.TodoList}>            
             {props.data.map((item) => { 
                     return (
-                        <Todo key={item.id} id={item.id} removeTodo={props.remove} text={item.text}/>
+                        <p className={props.active ? style.active : style.item } onClick={props.toggleClass} >
+                            <Todo key={item.id} id={item.id} removeTodo={props.remove} text={item.text} />
+                        </p>
                     );                
             })}
         </ol> 
