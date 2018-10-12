@@ -24,10 +24,10 @@ class TodoForm extends React.Component {
             <div className={style.form}>
                 <form onSubmit={this.submit.bind(this)}>
                     <label>
-                        <p>Add new Item:</p>
+                        <p><b>Add new Item:</b></p>
                         <input type="text" value={this.state.value} onChange={this.onChangeForm.bind(this)}></input>
                     </label>
-                    <input type="submit" value="Add Task"></input>
+                    <input type="submit" value="Add Item"></input>
                 </form>
             </div>
         )

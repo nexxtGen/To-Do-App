@@ -1,11 +1,83 @@
+li {
+    box-sizing: border-box;
+    margin: 5px 30px 5px 0;
+    background-color: rgba(27, 27, 27, 0.5);
+    padding: 0;
+
+}
+p{
+    margin-top: 2px;
+}
 .item {
-    color: rgb(74, 81, 90);
+    box-sizing: border-box;
+    position: relative;
+    color: rgb(224, 224, 224);
+    font-size: 16px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;    
+    display: flex;
+    justify-content: left;
+}
+
+.itemSpan {
+    position: relative;
+    color: rgb(236, 236, 236);
     font-size: 16px;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
 }
-.item:hover {
+
+.itemSpan:hover {
+    position: relative;
     text-decoration: line-through;
-    color: red;
+    color: rgb(157, 171, 229);
     cursor: pointer;
 }
+.active:hover {
+    position: relative;    
+    color: rgb(0, 47, 255);
+    cursor: pointer;
+    text-decoration: none;
+}
+.active {
+    color: rgb(0, 38, 255);
+    text-align: left;
+    text-decoration: line-through;
+}
+
+.date {
+    font-size: 13px;
+    color: rgb(198, 211, 255);
+}
+
+.born {
+    font-size: 11px;    
+}
+
+.div1 {
+    box-sizing: border-box;
+    width: 85%;
+    padding: 5px;
+    padding-left: 15px;
+
+}
+
+.div2 {    
+    text-align: right;
+    box-sizing: border-box;
+    width: 15%;
+    display: flex;
+    justify-content: flex-end;
+}
+button {
+    background: rgba(27, 27, 27, 0.5);
+    border: none;
+    border-left: 1px solid black;
+    color: white;
+}
+button:hover {
+    cursor: pointer;
+    background: rgba(255, 36, 36, 0.5);
+
+}
+
