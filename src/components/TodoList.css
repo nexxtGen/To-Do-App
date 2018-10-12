@@ -1,15 +1,17 @@
+ol {
+    background-color: rgba(20, 20, 20, 0.5);
+    padding: 5px;
+}
 .TodoList {
+    position: relative;
     box-sizing: border-box;
     color: blueviolet;
-    width: 70%;
+    width: 100%;
     margin: 15px auto;    
 }
 
 h3 {
+    position: relative;
     margin: 0 auto 5px;
 }
 
-.active {
-    color: red;
-    text-decoration: line-through;
-}
